@@ -1,0 +1,187 @@
+/* 全局样式 */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #333;
+}
+
+/* 头部样式 */
+header {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    border-bottom: 4px solid #3498db;
+}
+
+/* 标题样式 */
+h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+/* 每个section的样式 */
+section {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px 0;
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+}
+
+/* 每个二级标题样式 */
+h2 {
+    color: #3498db;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.cast h3 {
+    text-align: center;
+}
+
+
+/* 歌曲播放器部分 */
+.music-player {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.music-cover {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* 圆形 */
+    border: 5px solid #3498db;
+    margin-top: 20px;
+    animation: rotate 15s linear infinite;
+    background-image: url('music.jpg'); /* 设置背景图片 */
+    background-size: contain; /* 图片保持比例地适应圆形 */
+    background-position: center; /* 图片居中 */
+    background-repeat: no-repeat;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+audio {
+    margin-top: 20px;
+    width: 80%;
+    max-width: 600px;
+}
+
+
+/* 章节内容部分 */
+.chapter {
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.chapter img {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+    margin-top: 10px;
+    border-radius: 8px;
+}
+
+/* 章节细节图片 */
+.detail-image {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.detail-image img {
+    width: 100%;
+    height: auto;
+    margin: 2px 0;
+    border-radius: 8px;
+}
+
+/* 声源选取部分 */
+.sound-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.sound-selection img {
+    width: 100%;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+/* 演职员表部分 */
+.cast ul {
+    display: flex;
+    flex-direction: column; /* 改为竖向排列 */
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+}
+
+.cast li {
+    margin-bottom: 0px;
+}
+
+.cast img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* 意义部分 */
+.meaning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.meaning img {
+    width: 100%;
+    max-width: 5000px;
+    margin-top: px;
+    border-radius: 8px;
+}
+
+/* 页脚部分 */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    box-sizing: border-box;
+}
