@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>生与声</title>
-    <link rel="stylesheet" href="styles.css">
-    <style>
-        /* 新增跳转提示样式 */
-        .wechat-alert {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 9999;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            flex-direction: column;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
-</head>
-<body>
-    <!-- 新增微信跳转提示代码 -->
-    <script>
-        // 检测是否为手机端微信浏览器
-        function isMobileWeChatBrowser() {
-            const userAgent = navigator.userAgent;
-            return /MicroMessenger/i.test(userAgent) && /Mobile/i.test(userAgent);
-        }
-
-        // 创建跳转提示层
-        function createWeChatAlert() {
-            const alertDiv = document.createElement('div');
-            alertDiv.className = 'wechat-alert';
-            alertDiv.innerHTML = `
-                <h2>🎵 温馨提示</h2>
-                <p>微信内播放可能受限，请点击右上角...选择浏览器打开</p>
-            `;
-            document.body.prepend(alertDiv);
-        }
-
-        // 页面加载时检测
-        document.addEventListener('DOMContentLoaded', function () {
-            if (isMobileWeChatBrowser()) {
-                createWeChatAlert();
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>生与声</title>
+        <link rel="stylesheet" href="styles.css">
+        <style>
+            /* 新增跳转提示样式 */
+            .wechat-alert {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.8);
+                z-index: 9999;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                flex-direction: column;
+                text-align: center;
+                padding: 20px;
             }
-        });
-    </script>
+        </style>
+    </head>
+    
+    <body>
+        <!-- 新增微信跳转提示代码 -->
+        <script>
+            // 检测是否为微信浏览器
+            function isWeChatBrowser() {
+                return /MicroMessenger/i.test(navigator.userAgent);
+            }
+    
+            // 创建跳转提示层
+            function createWeChatAlert() {
+                const alertDiv = document.createElement('div');
+                alertDiv.className = 'wechat-alert';
+                alertDiv.innerHTML = `
+                    <h2>🎵 温馨提示</h2>
+                    <p>微信内播放可能受限，请点击右上角...选择浏览器打开</p>
+                `;
+                document.body.prepend(alertDiv);
+            }
+    
+            // 页面加载时检测
+            document.addEventListener('DOMContentLoaded', function () {
+                if (isWeChatBrowser()) {
+                    createWeChatAlert();
+                }
+            });
+        </script>
 
     <header>
         <h1>生与声</h1>
