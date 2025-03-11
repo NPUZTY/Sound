@@ -38,9 +38,10 @@
 <body>
     <!-- 新增微信跳转提示代码 -->
     <script>
-        // 微信浏览器检测
-        function isWeChatBrowser() {
-            return /MicroMessenger/i.test(navigator.userAgent);
+        // 检测是否为手机端微信浏览器
+        function isMobileWeChatBrowser() {
+            const userAgent = navigator.userAgent;
+            return /MicroMessenger/i.test(userAgent) && /Mobile/i.test(userAgent);
         }
 
         // 创建跳转提示层
@@ -49,21 +50,19 @@
             alertDiv.className = 'wechat-alert';
             alertDiv.innerHTML = `
                 <h2>🎵 温馨提示</h2>
-                <p>微信内播放可能受限，请点击下方按钮在浏览器中打开</p>
-                <button onclick="window.open(location.href)">立即跳转</button>
-                <p style="margin-top:15px;font-size:14px;">或点击右上角...选择浏览器打开</p>
+                <p>微信内播放可能受限，请点击右上角...选择浏览器打开</p>
             `;
             document.body.prepend(alertDiv);
         }
 
         // 页面加载时检测
-        document.addEventListener('DOMContentLoaded', function() {
-            if (isWeChatBrowser()) {
+        document.addEventListener('DOMContentLoaded', function () {
+            if (isMobileWeChatBrowser()) {
                 createWeChatAlert();
             }
         });
     </script>
-    
+
     <header>
         <h1>生与声</h1>
         <h3>科技声学传古韵，千年自然共合鸣</h3>
