@@ -15,10 +15,25 @@
     <section class="music-player">
         <h2>歌曲</h2>
         <img src="music.jpg" alt="歌曲封面" class="music-cover">
-        <audio controls>
+        <audio controls id="audioPlayer">
             <source src="music.mp3" type="audio/mp3">
-            您的浏览器不支持音频播放。
-        </audio>
+          </audio>
+          <button onclick="playAudio()">点击播放</button>
+          
+          <script>
+          function playAudio() {
+            const audio = document.getElementById('audioPlayer');
+            audio.play().catch(error => {
+              console.error('播放失败:', error);
+              
+              if (window.WeixinJSBridge) {
+                WeixinJSBridge.invoke('getNetworkType', {}, function() {
+                  audio.play();
+                });
+              }
+            });
+          }
+          </script>
         
     </section>
 
